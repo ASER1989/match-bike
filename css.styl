@@ -1,0 +1,465 @@
+@import '../css/fn'
+body
+  width em(320)
+  background-color #d0d0d0
+
+.content
+  width em(320)
+  position absolute !important
+  background url(./img/bg.png) repeat-x
+  background-size auto 100%
+  height 100%
+  overflow hidden
+
+.swiper-wrapper
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  transform: translate3d(0, 0, 0);
+
+.swiper-slide
+  width 32.5rem
+  -webkit-flex-shrink: 0;
+  -ms-flex: 0 0 auto;
+  flex-shrink: 0;
+  position: relative;
+  background url(./img/bg.png) no-repeat
+  background-size auto 100%
+  > img
+    width 100%
+    position absolute
+    bottom: 0
+.heimi-go
+  width em(153)
+  height em(153)
+  position absolute
+  top em(30)
+  left 50%
+  margin-left em(-76.5)
+  z-index 98
+  text-align center
+  font-size em(90)
+  color #FFFFFF
+  font-weight bold
+.board
+  width em(153)
+  height em(153)
+  background url('./img/tag_board.png') no-repeat
+  background-size 100% auto;
+  position absolute
+  top em(30)
+  left 50%
+  margin-left em(-76.5)
+  z-index 98
+
+.board-hand
+  position absolute
+  width em(153)
+  height em(153)
+  background url('./img/tag_hand.png') no-repeat
+  background-size 100% auto;
+  z-index 99
+  top 0
+  left 0
+  transition all 0.6s
+
+.tap-panel
+  width 20rem
+  position absolute
+  top 0
+  left:0
+  bottom:0
+  z-index 9999
+  user-select none
+.tap-dot
+  width em(26)
+  height em(26)
+  border-radius em(26)
+  background-color rgba(255, 255, 255, 0.5)
+  transform translate3d(9.2rem,14rem,0)
+  &.dot-tap
+    background-color rgba(255, 255, 255, 0.2)
+
+
+.trip-txt
+  position: absolute;
+  top:em(185)
+  text-align center
+  color #FFFFFF
+  width em(320)
+  font-size em(13)
+  z-index 99
+  user-select none
+.cust-person
+  position: absolute;
+  top: 0;
+  margin-top: -2.25rem;
+  right: 2.2rem;
+  >img
+    width em(15)
+
+.game-over
+  position absolute
+  top 0
+  left 0
+  width em(320)
+  bottom 0
+  z-index 100
+  text-align center
+  padding-top em(65)
+  user-select none
+.game-overtag
+  margin auto
+  text-align center
+  color #f9ec22
+  font-size em(14)
+  user-select none
+.game-tovote
+  color #ffffff
+  padding-top em(45)
+  user-select none
+  .game-tovotebtn
+    width em(125)
+    display block
+    margin em(20) auto
+    user-select none
+    >img
+      width em(125)
+.arrow
+  width: 6rem;
+  position: absolute;
+  top: 0.1875rem;
+  right: 0.5rem;
+  z-index: 0;
+
+.loadding
+  position absolute
+  top 0
+  left 0
+  bottom 0
+  right 0
+  background-color rgba(128, 128, 128, 0.73)
+  background url(./img/bg.png) repeat-x
+  background-size auto 100%
+  > .load-box
+    position absolute
+    top 50%
+    height em(130)
+    margin-top em(-70)
+    left 50%
+    margin-left em(-60)
+    width em(120)
+    transform scale(0.6)
+    > .load-img
+      width em(120)
+      height em(100)
+      background url(./img/load_1.png) no-repeat
+      transform translateZ(0)
+      &.runer
+        background url(./img/load.png) no-repeat
+        background-size em(1922) auto
+        animation loadRun infinite step-start 1s
+    > .load-text
+      text-align center
+      font-size em(30)
+      color #FFFFFF
+
+@keyframes loadRun
+  0% {
+    background-position: 0.2rem 0
+  }
+  7.14% {
+    background-position: -7.92500rem 0
+  }
+  14.29% {
+    background-position: -16.05000rem 0
+  }
+  21.43% {
+    background-position: -24.17500rem 0
+  }
+  28.57% {
+    background-position: -32.30000rem 0
+  }
+  35.71% {
+    background-position: -40.42500rem 0
+  }
+  42.86% {
+    background-position: -48.55000rem 0
+  }
+  50.00% {
+    background-position: -56.67500rem 0
+  }
+  57.14% {
+    background-position: -64.80000rem 0
+  }
+  64.29% {
+    background-position: -72.92500rem 0
+  }
+  71.43% {
+    background-position: -81.05000rem 0
+  }
+  78.57% {
+    background-position: -89.33500rem 0
+  }
+  85.71% {
+    background-position: -97.63000rem 0
+  }
+  92.86% {
+    background-position: -105.7500rem 0
+  }
+  98.66% {
+    background-position: -113.95000rem 0
+  }
+  100% {
+    background-position: 0.2rem 0
+  }
+
+/*******************页面样式**************************/
+.page-1-header
+  position absolute
+  top 0
+  left 0
+  > img
+    width em(320)
+
+.page-1-footer
+  position absolute
+  bottom 0
+  left 0
+  height em(76)
+  width em(320)
+  z-index 101
+
+.page-1-btns
+  text-align center
+  > a
+    height em(33)
+    width em(110)
+    margin 0 em(5)
+    > img
+      width em(110)
+
+.page-1-btmlink
+  text-align center
+  color #f1ff08 !important
+  font-size em(13)
+  text-decoration underline
+  line-height 1.6
+
+.page-18-footer
+  position absolute
+  bottom em(110)
+  width 20rem
+  left 0
+  > img
+    width 20rem
+  .page-18-vote
+    position absolute
+    left: em(110);
+    width: em(90);
+    bottom: em(116);
+    > img
+      width em(90)
+
+/***********************封面页*****************************/
+.cover-page
+  width 20rem
+  position absolute
+  top: 0
+  bottom: 0
+  left 0
+  right 0
+  .cover-poster
+    width 20rem
+    >img
+      max-width 20rem
+  .cover-btns
+    position absolute
+    width 10rem
+    height 5rem
+    bottom em(160)
+    left em(30)
+    >a
+      height em(32)
+      width em(115)
+      display block
+      margin-top em(10)
+      >img
+        width em(115)
+  .cover-footer
+    position absolute
+    bottom 0
+    width 20rem
+    display box
+    padding-bottom em(25)
+    >div
+      width 10rem
+      text-align center
+      color #474831 !important
+      >a
+        text-decoration underline
+/********************************自行车*******************************************/
+.bike-layer
+  z-index 100
+
+.bike, .bike2
+  width em(118)
+  height em(100)
+  background-image url(./img/bike1.png)
+  background-repeat no-repeat
+  background-size em(2037) em(100)
+  position absolute
+  bottom em(55)
+  left: 50%
+  margin-left em(-52.5)
+  background-position em(8) 0
+//animation bikerun  infinite step-start 1s
+
+.bike2
+  background-image url(./img/bike2.png) !important
+  bottom em(66)
+  margin-left em(-90)
+  z-index 6
+  transform scale(0.90)
+
+@keyframes yunrun
+  0% {
+    transform translateX(5.5rem)
+  }
+  50% {
+    transform translateX(0) scale(0.85)
+  }
+
+  100% {
+    transform translateX(5.5rem)
+  }
+
+
+/****************投票页面**********************/
+#_vote
+  .vote-title
+    width em(320)
+    text-align center
+    padding-top em(18)
+    > img
+      width em(185)
+  .vote-itemul
+    margin-top em(15)
+    > li
+      display box
+      width em(320)
+      padding em(15) em(15) em(10) em(25)
+
+  .vote-item
+    width: 50%
+    color #f7d33e
+    font-size em(13)
+
+  .vote-check
+    display inline-block
+    width em(13)
+    height @width
+    border-radius @width
+    border solid em(2) #f7d33e
+    background-color #FFFFFF
+    margin-right em(5)
+    &.checked
+      border solid em(2) #FFFFFF
+      background-color #f7d33e
+  .vote-info
+    padding em(6) em(6)
+    > p
+      margin-top em(10)
+      > input
+        width em(308)
+        border solid em(2) #f7d33e
+        height em(35)
+        text-align center
+        font-size 1rem
+        background-color #f0f0f0
+  .vote-btns
+    display block
+    margin em(15) auto
+    width em(138)
+    > img
+      width em(138)
+  .vote-footer
+    position absolute
+    bottom 0
+    width em(320)
+    left: 0
+  .vote-dialog
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom: 0
+    background-color rgba(0, 0, 0, 0.7)
+    z-index 99
+    padding-top em(130)
+    text-align center
+    > img
+      width em(210)
+    > a
+      width em(138)
+      display block
+      margin em(30) auto 0 auto
+      > img
+        width em(138)
+
+/*********************排行榜**************************/
+#_rank
+  .rank-title
+    width em(320)
+    text-align center
+    padding-top em(15)
+    > img
+      width em(185)
+  .rank-itemul
+    padding 0 em(15)
+    width em(320)
+    margin-top em(10)
+    > li
+      display box
+      width em(290)
+      margin-top em(5)
+      background-color #f7d33e
+      height em(35)
+  .rank-order
+    width em(35)
+    line-height em(35)
+    text-align center
+    background-color #FFFFFF
+    font-size em(23)
+    font-weight bold
+  .rank-name
+    width em(130)
+    line-height em(35)
+    font-size em(14)
+    padding-left em(15)
+  .rank-val
+    width em(125)
+    text-align right
+    font-size em(13)
+    padding em(4) em(5)
+    > p
+      line-height 1.1
+  .rank-footer
+    position absolute
+    bottom 0
+    width em(320)
+    left: 0

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>玩游戏，飙车去投票</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="./css/comm.css">
+    <script src="./scripts/lib/me.require.js"></script>
+</head>
+<body id="_rank" class="hide">
+<section class="content">
+    <div class="rank-title">
+        <img src="./img/word_ranktitle.png" alt="">
+    </div>
+    <ul class="rank-itemul">
+        <li>
+            <div class="rank-order">1</div>
+            <div class="rank-name">合作-九层佛阁</div>
+            <div class="rank-val">
+                <p>票数</p>
+                <p>99999999999</p>
+            </div>
+        </li>
+    </ul>
+    <img class="rank-footer" src="./img/foot.png" alt="">
+</section>
+<script id="_temp" type="text/html" class="hide">
+    <li>
+        <div class="rank-order"><%=i%></div>
+        <div class="rank-name">合作-九层佛阁</div>
+        <div class="rank-val">
+            <p>票数</p>
+            <p>99999999999</p>
+        </div>
+    </li>
+</script>
+
+<script type="text/javascript">
+    require(['http://res.wx.qq.com/open/js/jweixin-1.2.0.js','./scripts/wxconfig.js?v=1.10','./scripts/lib/zepto.js', './scripts/lib/zoom.js', './scripts/lib/underscore.js'], function () {
+
+        var zoo = new zoom($);
+        zoo.calc(function () {
+            $("body").removeClass("hide").on('touchmove', function (event) {
+                event.preventDefault();
+            });
+        });
+
+        $(window).on('resize', function () {
+            zoo.reSize();
+        });
+
+        var temp = _.template($("#_temp").html());
+        for(var i=2;i<10;i++){
+            $('.rank-itemul').append(temp({i:i}))
+        }
+
+        wxReady(function (wxConfig) {
+
+            var wxObj = this;
+            wxConfig.onShare(wxObj, "我飙到了80迈去投票，你不给大美甘南投一票嘛？", 'http://gntc.gsrunhe.com/index?type=gntc&callback=/cover.html', 'http://gn.toseetech.net/img/share.jpg')
+
+        });
+
+    })
+</script>
+</body>
+</html>

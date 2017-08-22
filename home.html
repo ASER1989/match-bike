@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>玩游戏，飙车去投票</title>
+    <meta name="Keywords" content="我飙到了80迈去投票，你不来给大美甘南投一票嘛">
+    <meta name="description" content="我已飙到了80迈去投票，你不来给大美甘南投一票嘛">
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="./css/comm.css">
+    <script src="./scripts/lib/me.require.js"></script>
+</head>
+<body>
+<div class="cover-page hide">
+    <div class="cover-poster">
+        <img src="./img/P1_BG.png" alt="">
+    </div>
+    <div class="cover-btns">
+        <a href="./index.html">
+            <img src="./img/btn_bgame.png" alt="">
+        </a>
+        <a href="http://shares.ucastcn.com/event/2017_bicycle_zdcq">
+            <img src="./img/btn_live.png" alt="">
+        </a>
+    </div>
+    <footer class="cover-footer">
+        <div>
+            <a href="http://source.gsrunhe.com/tuj/wx/vote/showRank">甘南景区排行</a>
+        </div>
+        <div>
+            <a href="">获奖规则</a>
+        </div>
+    </footer>
+</div>
+<script type="text/javascript">
+    require(['http://res.wx.qq.com/open/js/jweixin-1.2.0.js', './scripts/lib/zepto.js', './scripts/lib/zoom.js', './scripts/wxconfig.js?v=1.12'], function () {
+
+        function getQueryString(name) {
+            var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                return unescape(r[2]);
+            }
+            return null;
+        }
+
+        if (getQueryString("code") == null) {
+
+            var fromurl = location.href;
+            var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2188dcbc67c44521&redirect_uri=' + encodeURIComponent(fromurl) + '&response_type=code&scope=snsapi_base&state=STATE%23wechat_redirect&connect_redirect=1#wechat_redirect';
+            location.href = url;
+        }
+
+        $("body").on('touchmove', function (event) {
+            event.preventDefault();
+        });
+        var zoo = new zoom($);
+        zoo.calc(function () {
+            $(".cover-page").removeClass("hide");
+        });
+
+        $(window).on('resize', function () {
+            zoo.calc();
+
+        });
+
+        wxReady(function (wxConfig) {
+
+            var wxObj = this;
+            //            'http://gntc.gsrunhe.com/index?type=gntc&callback=/cover.html'
+            wxConfig.onShare(wxObj, "我的藏地传奇，信不信我飙到了80公里？", 'http://bike.gsrunhe.com/index?type=gntc&callback=/cover.html', 'http://gn.toseetech.net/img/share.jpg')
+
+        });
+    })
+</script>
+</body>
+</html>

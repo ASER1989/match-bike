@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>玩游戏，飙车去投票</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="./css/comm.css">
+    <script src="./scripts/lib/me.require.js"></script>
+</head>
+<body id="_vote" class="hide">
+<section class="content">
+    <div class="vote-title">
+        <img src="./img/vote_title.png" alt="">
+    </div>
+    <ul class="vote-itemul">
+        <li>
+            <div class="vote-item">
+                <i class="vote-check checked" data-val="1"></i>夏河：拉卜楞寺
+            </div>
+            <div class="vote-item">
+                <i class="vote-check" data-val="2"></i>玛曲：黄河第一湾
+            </div>
+        </li>
+        <li>
+            <div class="vote-item">
+                <i class="vote-check" data-val="3"></i>碌曲：尕海
+            </div>
+            <div class="vote-item">
+                <i class="vote-check" data-val="4"></i>卓尼：大峪沟
+            </div>
+        </li>
+        <li>
+            <div class="vote-item">
+                <i class="vote-check" data-val="5"></i>临潭：冶力关
+            </div>
+            <div class="vote-item">
+                <i class="vote-check" data-val="6"></i>迭部：石城扎尕那
+            </div>
+        </li>
+        <li>
+            <div class="vote-item">
+                <i class="vote-check " data-val="7"></i>舟曲：拉尕山
+            </div>
+            <div class="vote-item">
+                <i class="vote-check" data-val="8"></i>合作：九层佛阁
+            </div>
+        </li>
+    </ul>
+
+    <div class="vote-info">
+        <p>
+            <input id="_form_name" name="name" type="text" placeholder="请输入您的姓名">
+        </p>
+        <p>
+            <input id="_form_mobile" name="mobile" type="number" placeholder="请输入您的电话">
+        </p>
+    </div>
+    <a href="javascript:void(0)" class="vote-btns">
+        <img src="./img/btn-submit.png" alt="">
+    </a>
+
+    <img class="vote-footer" src="./img/foot.png" alt="">
+
+</section>
+
+<div class="vote-dialog hide">
+    <img src="./img/word_voteend.png" alt="">
+    <a href="./rank.html">
+        <img src="./img/btn-torank.png" alt="">
+    </a>
+</div>
+
+<script type="text/javascript">
+    require(['http://res.wx.qq.com/open/js/jweixin-1.2.0.js', './scripts/wxconfig.js?v=1.11', './scripts/lib/zepto.js', './scripts/lib/zoom.js', './scripts/lib/validate.js'], function () {
+
+        var zoo = new zoom($);
+        zoo.calc(function () {
+            $("body").removeClass("hide").on('touchmove', function (event) {
+                event.preventDefault();
+            });
+        });
+
+        $(window).on('resize', function () {
+            zoo.reSize();
+        });
+
+        $(".vote-item").on("click", function () {
+            $(".vote-item i").removeClass("checked");
+            $(this).find("i").addClass("checked");
+        })
+
+
+        $(".vote-btns").on("click", function () {
+            var vali = new validate();
+            $(".vote-info input").each(function (i, v) {
+                var item = $(v);
+                vali.add(item.val() != "", item.attr('placeholder'));
+
+                item.attr("name") == "mobile" && vali.add(item.val().length == 11, '请输入11位电话号码');
+            })
+
+            if (!vali.test(function (msg) {
+                    alert(msg)
+                })) {
+
+                $.ajax({
+                    url: "",
+                    data: {
+                        val: $(".vote-check.checked").attr("data-val"),
+                        name: $("#_form_name").val(),
+                        mobile: $("#_form_mobile").val()
+                    },
+                    success: function () {
+                        $(".vote-dialog").removeClass("hide");
+                    }
+                });
+
+            }
+
+            wxReady(function (wxConfig) {
+
+                var wxObj = this;
+                wxConfig.onShare(wxObj, "我飙到了80迈去投票，你不给大美甘南投一票嘛？", 'http://bike.gsrunhe.com/index?type=gntc&callback=/cover.html', 'http://gn.toseetech.net/img/share.jpg')
+
+            });
+        })
+    })
+</script>
+</body>
+</html>

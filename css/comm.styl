@@ -1,0 +1,77 @@
+@import  'fn'
+
+*
+  margin 0
+  padding 0
+  border 0
+  vertical-align: baseline;
+  box-sizing border-box
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  outline:none
+body
+  //font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+  //font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+ol, ul
+  list-style: none;
+a
+  text-decoration none
+  cursor: pointer
+  color inherit
+  &:hover
+    color: inherit
+//div, ul, span, li, img
+  //-webkit-transform-style: preserve-3d;
+  //-moz-transform-style: preserve-3d;
+  //-ms-transform-style: preserve-3d;
+  //transform-style: preserve-3d;
+span
+  display inline-block
+.clearfix
+  clear both
+  overflow: hidden;
+  _zoom: 1;
+
+.align
+  text-align: center !important
+  &.right
+    text-align: right !important
+  &.left
+    text-align: left !important
+
+.ellipsis
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space:nowrap
+.multi-ellipsis
+  display:box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+.btn
+  background-color #f97878
+  display inline-block
+  color #ffffff !important
+  font-size 0.8rem
+  padding em(7) em(20)
+  border-radius 30px
+  box-shadow 0 0 10px rgba(249, 120, 120, 0.8)
+  width auto
+  min-width em(80)
+  line-height normal !important
+  text-align center
+  letter-spacing: 0.2rem;
+  &.va-m
+    vertical-align middle
+.red
+  color #f97878 !important
+.grey
+  color #a0a0a0
+.hide
+  display none !important
+.f-l
+  float left
+.f-r
+  float right

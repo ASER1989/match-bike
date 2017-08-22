@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>玩游戏，飙车去投票</title>
+    <meta name="Keywords" content="我飙到了80迈去投票，你不来给大美甘南投一票嘛">
+    <meta name="description" content="我已飙到了80迈去投票，你不来给大美甘南投一票嘛">
+    <link rel="stylesheet" href="css.css?v=1.0.0">
+    <link rel="stylesheet" href="./css/comm.css">
+    <script src="./scripts/lib/me.require.js"></script>
+
+</head>
+<body>
+<div class="loadding">
+    <div class="load-box">
+        <div class="load-img"></div>
+        <div class="load-text">1%</div>
+    </div>
+    <img class="hide" src="./img/load.png" alt="">
+    <img class="hide" src="./img/load_1.png" alt="">
+</div>
+
+<div class="content hide">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="./img/pic_01.png" alt="">
+        </div>
+
+        <div class="swiper-slide"><img src="./img/pic_02.png" alt=""></div>
+        <div class="swiper-slide"><img src="./img/pic_03.png" alt=""></div>
+        <div class="swiper-slide"><img src="./img/pic_04.png" alt=""></div>
+        <div class="swiper-slide"><img src="./img/pic_05.png" alt=""></div>
+        <div class="swiper-slide"><img src="./img/pic_06.png" alt=""></div>
+        <div class="swiper-slide"><img src="./img/pic_07.png" alt=""></div>
+        <div class="swiper-slide"><img src="./img/pic_08.png" alt=""></div>
+
+    </div>
+    <div class="bike2 bike-layer"></div>
+    <div class="bike bike-layer">
+        <!--<div class="cust-person">-->
+        <!--<img src="./img/tag.png" alt="">-->
+        <!--</div>-->
+    </div>
+    <div class="board hide">
+        <div class="board-hand"></div>
+    </div>
+    <div class="trip-txt hide">
+        连续点击屏幕加速
+    </div>
+
+    <div class="heimi-go">
+        3
+    </div>
+</div>
+
+<div class="game-over hide">
+    <div class="game-overtag">
+        恭喜你，到达终点
+        <p id="_mark_tag">最高时速20km/h,轻松跑完全程!</p>
+        <p id="_mark_slogan">邀请好友欣赏甘南美景</p>
+        <img class="arrow" src="./img/arrow.png" alt="">
+    </div>
+
+    <div class="game-tovote">
+        投票选出你最喜欢的景点
+
+        <a class="game-tovotebtn" href="http://source.gsrunhe.com/tuj/wx/voteRediret">
+            <img src="./img/btn_tovote.png" alt="">
+        </a>
+    </div>
+</div>
+
+<div class="tap-panel hide">
+    <div class="tap-dot"></div>
+</div>
+
+<audio id="_game_kada" src="./img/kada3.mp3?v=1" preload="auto">
+    <source src="./img/kada3.mp3?v=1" type="audio/mp3"/>
+</audio>
+<audio id="_game_start" src="./img/start.mp3" preload="auto">
+    <source src="./img/start.mp3" type="audio/mp3"/>
+</audio>
+<audio id="_game_ending" src="./img/ending.mp3" preload="auto">
+    <source src="./img/ending.mp3" type="audio/mp3"/>
+</audio>
+
+<script src="./scripts/index.js?v=1.0.8"></script>
+<script src="./img/kada3.mp3?v=1"/>
+</body>
+</html>
